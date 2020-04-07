@@ -28,12 +28,13 @@
             <div class="slider-section flex column space-around align-center">
 
                 <div class="upper-slider flex space-between">
+                    <input type="number" class="slider-input" name="tentacles" min="1" max="10" value="1"
+                        onchange="adjustDrawLatency(this.value)">
                     <span class="set-angle flex">
                         <input type="checkbox" class="is-angle-input" name="is-angle-input" onchange="setAngleUse()">
                         <label for="is-angle-input">Angle</label>
                     </span>
-                    <input type="number" class="slider-input" name="tentacles" min="1" max="10" value="1"
-                        onchange="adjustDrawLatency(this.value)">
+                
                 </div>
                 <input type="range" min="1" max="10" value="1" class="slider" onchange="adjustDrawLatency(this.value)"
                     oninput="adjustDrawLatency(this.value)">
