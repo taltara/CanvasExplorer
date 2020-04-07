@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>mrCanvas</title>
+</head>
+
+<body onload="init()">
+
+
+    <img src="img/cat.jpg" alt="">
+
+
+    <section class="tools-section flex space-evenly wrap">
+
+
+        <div class="draw-management flex align-baseline space-evenly">
+
+            <select name="shapes" onchange="setShape(this.value)" class="shape-input">
+                <option value="triangle">Triangle</option>
+                <option value="rect">Rectangle</option>
+                <option value="circle">Circle</option>
+                <option value="text">Text</option>
+                <option value="line">Line</option>
+            </select>
+            <div class="slider-section flex column space-around align-center">
+
+                <div class="upper-slider flex space-between">
+                    <span class="set-angle flex">
+                        <input type="checkbox" class="is-angle-input" name="is-angle-input" onchange="setAngleUse()">
+                        <label for="is-angle-input">Angle</label>
+                    </span>
+                    <input type="number" class="slider-input" name="tentacles" min="1" max="10" value="1"
+                        onchange="adjustDrawLatency(this.value)">
+                </div>
+                <input type="range" min="1" max="10" value="1" class="slider" onchange="adjustDrawLatency(this.value)"
+                    oninput="adjustDrawLatency(this.value)">
+            </div>
+        </div>
+
+
+        <form class="color-pickers flex">
+            <section class="change-type-color flex">
+
+                <div class="line-coloring flex column justify-center align-center" onclick="setColorType('line')">
+                    <label for="current-line-color">Line</label>
+                    <div class="current-line-color selected-color-type color-types"></div>
+                </div>
+                <div class="fill-coloring flex column justify-center align-center" onclick="setColorType('fill')">
+                    <label for="current-fill-color">Fill</label>
+                    <div class="current-fill-color color-types"></div>
+                </div>
+
+            </section>
+            <input class="color-picker" type="color" name="color-picker-1" value="#ff0000"
+                onchange="setColor(this.value)" onclick="setColor(this.value)">
+            <input class="color-picker" type="color" name="color-picker-2" value="#009a00"
+                onchange="setColor(this.value)" onclick="setColor(this.value)">
+            <input class="color-picker" type="color" name="color-picker-3" value="#0080ff"
+                onchange="setColor(this.value)" onclick="setColor(this.value)">
+            <input class="color-picker color-picker-random" type="color" name="color-picker-random" value=""
+                onclick="setColor(null, event)">
+        </form>
+
+
+        <div class="canvas-management flex space-evenly align-baseline">
+
+            <a onclick="clearCanvas()" class="button">Clear</a>
+            <a href="#" onclick="downloadCanvas(this)" download="" class="button">Download</a>
+        </div>
+
+
+    </section>
+
+    <!-- <hr> -->
+
+    <div class="canvas-container">
+        <canvas id="my-canvas" height="450" width="450"></canvas>
+        <!-- <canvas id="my-canvas" height="450" width="450" onmousedown="draw(event)"></canvas> -->
+    </div>
+
+
+    <script src="js/hammer.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

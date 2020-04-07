@@ -1,0 +1,274 @@
+/* BASIC */
+
+body {
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif !important;
+}
+
+canvas {
+    display: block;
+    /* margin: 25px auto; */
+    /* border: 1px solid black; */
+    width: 100%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    cursor: url('../img/pointer.svg'), auto;
+    touch-action: none;
+    transition: ease-in-out 0.3s;
+}
+
+.canvas-container {
+    margin: 0 auto;
+    width: 90vw;
+    height: 90vh;
+}
+
+img {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin: 0;
+}
+
+/* Components */
+
+.tools-section {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+    align-items: flex-end;
+}
+
+.canvas-management {
+    width: 12rem;
+    padding: 0.5rem;
+    border: 2px dashed black;
+}
+
+.draw-management {
+    width: 23rem;
+    border: 2px dashed;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.color-pickers {
+    border: 2px dashed;
+    padding: 0.5rem;
+    align-items: flex-end;
+    background-color: white;
+}
+
+.color-pickers input {
+    cursor: pointer;
+}
+
+.color-pickers>input:last-of-type {
+    margin-left: 1rem;
+    box-shadow: 0px 0px 5px 0px rgba(255, 215, 0, 1);
+}
+
+.color-picker {
+    width: 2rem;
+    height: 2rem;
+}
+
+.random-color-sign {
+    font-size: 2rem;
+}
+
+.current-fill-color, .current-line-color {
+
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.selected-color-type {
+
+    box-shadow: 0px 0px 5px 0px rgba(255, 215, 0, 1);
+}
+
+.change-type-color {
+
+    flex-wrap: nowrap;
+    margin-right: 1rem;
+}
+
+.color-types {
+
+    transition: ease-in-out 0.2s;
+}
+
+.shape-input {
+    text-transform: uppercase;
+    margin-right: 1rem;
+    align-self: flex-end;
+}
+
+.button {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid;
+    outline: none;
+}
+
+.button:hover, select:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.button, select {
+    font-family: 'Fira Sans', sans-serif !important;
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+
+select {
+    font-size: large;
+    border-radius: 15px;
+    outline: none;
+    padding: 0.5rem;
+    border: 1px solid black;
+}
+
+/* draw latency slider */
+
+.upper-slider {
+
+    width: 100%;
+}
+
+.set-angle {
+
+    cursor: pointer;
+}
+
+.slider {
+    -webkit-appearance: none;
+    /* width: 100%; */
+    width: 11rem;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider-section {
+    flex-wrap: nowrap;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: black;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider-input {
+    font-size: inherit;
+    width: 3rem;
+    font-family: 'Fira Sans', sans-serif !important;
+    padding-left: 0.5rem;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.text-input {
+    visibility: hidden;
+    width: 0px;
+    transition: ease-in-out 0.3s;
+}
+
+.show-input {
+    visibility: visible;
+    width: 8rem;
+    font-family: 'Fira Sans', sans-serif !important;
+    font-size: large;
+    padding: 0.5rem;
+    border-radius: 15px;
+    border: 1px solid;
+    outline: none;
+}
+
+/* HELPERS */
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-between {
+
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-baseline {
+    align-items: baseline;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 904px) {
+    .draw-management, .color-pickers {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 692px) {
+    .draw-management {
+        /* margin-bottom: 1rem; */
+    }
+    .color-pickers {
+        margin-bottom: unset;
+    }
+}
+
+@media (max-width: 516px) {
+
+    .color-pickers {
+        margin-bottom: 1rem;
+    }
+}
