@@ -65,23 +65,28 @@
         </form>
 
 
-        <div class="canvas-management flex space-evenly align-baseline">
+        <div class="canvas-management flex space-between align-baseline">
 
             <a onclick="clearCanvas()" class="button">Clear</a>
             <a href="#" onclick="downloadCanvas(this)" download="" class="button">Download</a>
+            <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                <input name="img" id="imgData" type="hidden" />
+                <button class="btn button" type="submit">Share</button>
+                <div class="share-container"></div>
+            </form>
         </div>
 
 
     </section>
 
-    <!-- <hr> -->
 
     <div class="canvas-container">
         <canvas id="my-canvas" height="450" width="450"></canvas>
-        <!-- <canvas id="my-canvas" height="450" width="450" onmousedown="draw(event)"></canvas> -->
+
     </div>
 
 
+    <script src="js/upload-service.js"></script>
     <script src="js/hammer.min.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
