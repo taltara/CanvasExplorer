@@ -54,7 +54,7 @@ function getAngle (x1, y1, x2, y2) {
     var dist = Math.sqrt((distY*distY)+(distX*distX)); //hypotenuse, 
        //don't know if there is a built in JS function to do the square of a number
     var val = distY/dist;
-    var aSine = Math.asin(val)*(180);
+    var aSine = Math.asin(val);
     // var aSine = Math.asin(val);
     return aSine; //return angle in degrees
 }
@@ -64,7 +64,7 @@ function callback(e) {
     y2 = e.pageY; //new Y
 
     gDrawAngle = getAngle(x1, y1, x2, y2);
-    if(!isAngleSet) gDrawAngle = 0;
+    if(!isAngleSet || gCurrShape === 'circle') gDrawAngle = 0;
     console.log("ANGLE: " + gDrawAngle);
     console.log("mouse has stopped");   
     set = false;
