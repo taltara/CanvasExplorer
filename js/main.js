@@ -21,11 +21,9 @@ var gDrawAngle, isAngleSet = false;
 var hammertime = new Hammer(document.querySelector('#my-canvas'));
 
 
-
 function setAngleUse() {
 
     isAngleSet = !isAngleSet;
-    
 }
 
 function setColorType(type) {
@@ -338,7 +336,15 @@ function setColor(color, event) {
             document.querySelector('.current-fill-color').style.backgroundColor = color;
         }
 
-        elToolsSection.style.backgroundColor = color;
+        if(gCurrColorWhich === 'fill') {
+
+            elToolsSection.style.backgroundColor = color;
+            
+        } else {
+            
+            
+            elToolsSection.style.boxShadow = `0px 5px 10px 0px ${color}`;
+        }
     }
     
     
